@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class LevelOrder {
+public class LevelOrder102 {
     public class TreeNode {
         int val;
         TreeNode left;
@@ -24,6 +24,12 @@ public class LevelOrder {
         }
     }
 
+    /**
+     * 二叉树层序遍历
+     * https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
+     * @param root
+     * @return
+     */
     public List<List<Integer>> levelOrder (TreeNode root){
         List<List<Integer>> ret = new ArrayList<>();
         if (root == null) {

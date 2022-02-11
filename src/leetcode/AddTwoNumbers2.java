@@ -1,6 +1,6 @@
 package leetcode;
 
-public class AddTwoNumbers {
+public class AddTwoNumbers2 {
     public class ListNode {
         int val;
         ListNode next;
@@ -18,6 +18,12 @@ public class AddTwoNumbers {
         }
     }
 
+    /**
+     * https://leetcode-cn.com/problems/add-two-numbers/
+     * @param l1
+     * @param l2
+     * @return
+     */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         int carry = 0;
         if (l1 == null && l2 == null) {

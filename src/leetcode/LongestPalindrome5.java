@@ -1,6 +1,12 @@
 package leetcode;
 
-public class LongestPalindrome {
+public class LongestPalindrome5 {
+    /**
+     * 最长回文字符串
+     * https://leetcode-cn.com/problems/longest-palindromic-substring/
+     * @param s
+     * @return
+     */
     public String longestPalindrome(String s) {
         if (s == null || s.length() < 1) return "";
         int start = 0, end = 0;

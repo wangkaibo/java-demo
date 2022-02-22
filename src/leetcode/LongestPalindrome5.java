@@ -8,29 +8,26 @@ public class LongestPalindrome5 {
      * @return
      */
     public String longestPalindrome(String s) {
-        if (s == null || s.length() < 1) return "";
+        // 中心扩展法
         int start = 0, end = 0;
-        for (int i = 0; i < s.length() - 1; i++) {
-            int len1 = expendAroundCenter(s, i, i);
-            int len2 = expendAroundCenter(s, i, i + 1);
+        for (int i = 0; i < s.length(); i++) {
+            int len1 = extend(s, i, i);
+            int len2 = extend(s, i, i + 1);
             int len = Math.max(len1, len2);
             if (len > end - start) {
-                start = i - (len - 1) / 2;
-                end = i + len / 2;
+                // aba 1 3
+                start = i - len / 2;
+                end = i + (len + 1) / 2;
             }
         }
         return s.substring(start, end + 1);
     }
 
-    public int expendAroundCenter(String s, int left, int right) {
-        // a | a  a b a
-        int l = left, r = right;
-        while (l >= 0 && r < s.length() && s.charAt(l) == s.charAt(r)) {
-            l--;
-            r++;
-            System.out.println(l);
-            System.out.println(r);
+    private int extend(String s, int start, int end) {
+        while(start >= 0 && end < s.length() && s.charAt(start) == s.charAt(end)) {
+            start--;
+            end++;
         }
-        return r - l - 1;
+        return end - start - 1;
     }
 }
